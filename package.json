@@ -1,1 +1,1 @@
-{"name":"presdodum-salud","version":"1.0.0","private":true,"type":"module","description":"Prototipo navegable de salud integral con datos ficticios","scripts":{"check":"node scripts/check.mjs"}}
+{"name":"presdodum-salud","version":"1.0.0","private":true,"type":"module","description":"Sitio comercial y prototipo navegable de salud integral con datos ficticios","scripts":{"check":"node scripts/check.mjs && node scripts/check-home.mjs","check:home":"node scripts/check-home.mjs"}}
