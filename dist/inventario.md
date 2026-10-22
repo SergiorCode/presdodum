@@ -1,0 +1,112 @@
+# PRESDODUM · Inventario funcional
+
+25 vistas maestras · 55 pantallas y estados · Datos exclusivamente ficticios.
+
+La tabla define la experiencia completa antes del desarrollo visual. Las 14 capturas seleccionadas y su correspondencia se documentan en Servicios_14_puntos.md.
+
+| ID | Nombre | Portal / Rol | Módulo | Objetivo | Información principal | CTA principal | Pantalla destino | Tipo |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S01 | Acceso del empleado | Compartido | Acceso | Entrar a la experiencia del empleado | Perfil ficticio, correo y paquete | Entrar como Mariana | S05 | Vista maestra |
+| S02 | Acceso de empresa | Empresa | Acceso | Entrar al portal de empresa | Organización ficticia y rol de administración | Entrar a empresa | S42 | Estado derivado |
+| S03 | Recuperar acceso | Compartido | Acceso | Solicitar instrucciones de recuperación | Correo de demostración | Enviar instrucciones | S04 | Estado derivado |
+| S04 | Recuperación confirmada | Compartido | Acceso | Confirmar la simulación de recuperación | Confirmación sin envío de correo real | Volver al acceso | S01 | Estado derivado |
+| S05 | Inicio del empleado | Empleado | Inicio | Conocer el estado del paquete y siguientes acciones | Paquete, cita, prevención, solicitudes y accesos rápidos | Ver mi expediente | S06 | Vista maestra |
+| S06 | Mi salud · resumen | Empleado | Mi salud | Consultar el expediente clínico personal | PR-00271, antecedentes, indicadores y documentos | Ver historial clínico | S07 | Vista maestra |
+| S07 | Historial clínico | Empleado | Mi salud | Recorrer los eventos de salud | Timeline de consultas, estudios y vacunas ficticios | Ver consulta | S09 | Estado derivado |
+| S08 | Mi registro de vacunas | Empleado | Mi salud | Consultar registros y beneficios de vacunación | Registros ilustrativos y documentos | Ver beneficio de vacunas | S18 | Estado derivado |
+| S09 | Detalle de consulta | Empleado | Mi salud | Consultar una atención registrada | Motivo, profesional, notas ficticias y receta | Ver receta | S10 | Vista maestra |
+| S10 | Detalle de receta | Empleado | Mi salud | Consultar y descargar una receta ilustrativa | Folio, emisor, fecha y registro sin pauta médica | Ver documento de receta | S34 | Estado derivado |
+| S11 | Resultado de estudio | Empleado | Mi salud | Consultar el documento de un estudio | Estudio preventivo, fecha, estatus y archivo ficticio | Ver documento | S34 | Estado derivado |
+| S12 | Consultas próximas | Empleado | Consultas médicas | Administrar las citas programadas | Fecha, hora, profesional, modalidad y estado | Agendar consulta | S14 | Vista maestra |
+| S13 | Consultas anteriores | Empleado | Consultas médicas | Revisar atenciones previas | Listado de consultas y acceso a detalle | Ver detalle clínico | S09 | Estado derivado |
+| S14 | Agendar consulta · drawer | Empleado | Consultas médicas | Seleccionar una cita de demostración | Especialidad, fecha, horario y modalidad | Confirmar cita de ejemplo | S12 | Estado derivado |
+| S15 | Mis medicamentos | Empleado | Mi salud | Consultar registros de medicamentos | Tratamientos ficticios, estado y receta vinculada | Ver mis recetas | S16 | Vista maestra |
+| S16 | Mis recetas | Empleado | Mi salud | Localizar recetas emitidas | Folios, fechas y documentos ilustrativos | Abrir receta | S10 | Estado derivado |
+| S17 | Catálogo de beneficios | Empleado | Beneficios | Explorar el paquete integral | Vacunas, prevención, red médica, estudios y farmacia | Ver estudio preventivo | S19 | Vista maestra |
+| S18 | Descuentos en vacunas | Empleado | Beneficios | Consultar y activar el beneficio ilustrativo | Servicios, disponibilidad y condiciones de ejemplo | Solicitar orientación | S24 | Vista maestra |
+| S19 | Estudio preventivo anual | Empleado | Beneficios | Consultar el estado del estudio anual | Elegibilidad, pasos, prestadores y resultado | Solicitar estudio | S25 | Estado derivado |
+| S20 | Descuentos en medicamentos | Empleado | Beneficios | Consultar la red y condiciones de farmacia | Farmacias ficticias y cupón de demostración | Generar cupón de ejemplo | S34 | Estado derivado |
+| S21 | Descuentos en estudios | Empleado | Beneficios | Consultar opciones de laboratorio e imagen | Prestadores, categorías y condiciones ilustrativas | Consultar red de estudios | S22 | Estado derivado |
+| S22 | Red médica y de estudios | Empleado | Beneficios | Encontrar un prestador ficticio | Filtros por servicio, zona y modalidad | Ver prestador | S23 | Vista maestra |
+| S23 | Perfil de prestador | Empleado | Beneficios | Consultar disponibilidad y beneficio | Especialidad, ubicación ficticia, horarios y descuento | Agendar consulta | S14 | Estado derivado |
+| S24 | Solicitar asesoría médica | Empleado | Solicitudes | Crear una solicitud de orientación | Motivo general, modalidad y preferencia de contacto | Enviar solicitud de ejemplo | S27 | Vista maestra |
+| S25 | Solicitar estudio preventivo | Empleado | Solicitudes | Solicitar coordinación del estudio anual | Prestador, fecha preferida y comentarios | Enviar solicitud de ejemplo | S27 | Estado derivado |
+| S26 | Solicitar ambulancia · simulación | Empleado | Coberturas | Demostrar el flujo de asistencia de ambulancia | Ubicación ficticia, contacto y condiciones ilustrativas | Simular solicitud | S27 | Estado derivado |
+| S27 | Solicitud registrada | Empleado | Solicitudes | Mostrar folio y próximos pasos | Folio, estado, fecha y seguimiento | Dar seguimiento | S32 | Estado derivado |
+| S28 | Mis coberturas | Empleado | Coberturas | Comprender las coberturas del paquete | Accidentes, gastos funerarios y ambulancia | Ver cobertura por accidentes | S29 | Vista maestra |
+| S29 | Cobertura por accidentes | Empleado | Coberturas | Consultar alcance y proceso ilustrativos | Beneficiarios, requisitos y documentos de ejemplo | Iniciar solicitud de ejemplo | S24 | Vista maestra |
+| S30 | Cobertura de gastos funerarios | Empleado | Coberturas | Consultar asistencia y requisitos ilustrativos | Beneficiarios, documentos y pasos de apoyo | Solicitar orientación | S24 | Estado derivado |
+| S31 | Mis solicitudes | Empleado | Solicitudes | Consultar solicitudes y su estado | Búsqueda, filtros, folios, fechas y estados | Ver seguimiento | S32 | Vista maestra |
+| S32 | Detalle y seguimiento | Empleado | Solicitudes | Conocer el avance y agregar información | Timeline, mensajes, adjuntos y próximo paso | Agregar comentario | S32 | Vista maestra |
+| S33 | Centro de documentos | Compartido | Documentos | Localizar y descargar documentos permitidos | Categorías, búsqueda, fechas y permisos por rol | Abrir documento | S34 | Vista maestra |
+| S34 | Visor de documento · modal | Compartido | Documentos | Previsualizar y descargar un archivo ficticio | Título, emisor, contenido ilustrativo y archivo | Descargar archivo de ejemplo | S34 | Estado derivado |
+| S35 | Centro NOM-035 | Empleado | NOM-035 | Consultar información y actividades de bienestar | Documentos, confidencialidad y cuestionario ilustrativo | Abrir ejercicio de bienestar | S36 | Vista maestra |
+| S36 | Cuestionario de bienestar | Empleado | NOM-035 | Demostrar una captura de respuestas | Preguntas de ejemplo, progreso y guardado local | Guardar respuestas de ejemplo | S37 | Estado derivado |
+| S37 | Cuestionario completado | Empleado | NOM-035 | Confirmar registro del ejercicio ilustrativo | Fecha, confirmación y acceso a documentos | Volver al centro | S35 | Estado derivado |
+| S38 | Mi perfil | Empleado | Mi perfil | Consultar identidad, contacto y privacidad | Mariana López Hernández, empresa y consentimiento | Editar perfil | S39 | Vista maestra |
+| S39 | Editar perfil y consentimiento | Empleado | Mi perfil | Actualizar datos ficticios y acceso laboral | Contacto, contacto de apoyo y autorización laboral | Guardar cambios | S38 | Estado derivado |
+| S40 | Centro de ayuda | Compartido | Ayuda | Resolver dudas de uso de la plataforma | Buscador, preguntas frecuentes y soporte | Abrir asistente PRESDODUM | S41 | Vista maestra |
+| S41 | Asistente PRESDODUM · panel | Compartido | Ayuda | Demostrar soporte contextual y navegación | Conversación simulada, sugerencias y enlaces útiles | Consultar beneficios | S17 | Estado derivado |
+| S42 | Inicio de empresa | Empresa | Inicio | Conocer actividad y pendientes de la organización | Colaboradores, solicitudes, prevención y actividad | Ver colaboradores | S43 | Vista maestra |
+| S43 | Directorio de colaboradores | Empresa | Colaboradores | Buscar y consultar colaboradores ficticios | Nombre, área, paquete, estado y autorización | Abrir perfil | S45 | Vista maestra |
+| S44 | Alta de colaborador · drawer | Empresa | Colaboradores | Agregar un colaborador de demostración | Nombre, correo, área y paquete sin datos clínicos | Guardar colaborador de ejemplo | S43 | Estado derivado |
+| S45 | Perfil de colaborador | Empresa | Colaboradores | Consultar información laboral y alcance permitido | Paquete, actividad y consentimiento registrado | Ver expediente autorizado | S46 | Vista maestra |
+| S46 | Expediente autorizado | Empresa / Medicina laboral | Medicina laboral | Mostrar solo información expresamente autorizada | Constancia laboral y estudio autorizado; sin notas privadas | Ver documento autorizado | S34 | Estado derivado |
+| S47 | Medicina laboral | Empresa / Medicina laboral | Medicina laboral | Dar seguimiento a prevención laboral | Estudios, autorizaciones y estado por colaborador | Ver actividad | S48 | Vista maestra |
+| S48 | Actividad de medicina laboral | Empresa / Medicina laboral | Medicina laboral | Recorrer eventos laborales permitidos | Timeline con actor, fecha, acción y alcance | Consultar colaborador | S45 | Estado derivado |
+| S49 | Bandeja de solicitudes | Empresa | Solicitudes | Gestionar solicitudes operativas de colaboradores | Folios, tipo, prioridad, responsable y estado | Abrir solicitud | S50 | Vista maestra |
+| S50 | Gestión de solicitud | Empresa | Solicitudes | Asignar responsable y actualizar avance | Datos operativos, historial y mensajes compartidos | Guardar actualización | S49 | Estado derivado |
+| S51 | Reportes de empresa | Empresa | Reportes | Revisar actividad agregada de la organización | Uso del paquete, prevención y filtros de periodo | Exportar reporte ficticio | S51 | Vista maestra |
+| S52 | Seguimiento NOM-035 de empresa | Empresa | NOM-035 | Consultar participación agregada y documentos | Participación, campañas y ejercicio sin evaluación oficial | Consultar documentos NOM-035 | S33 | Estado derivado |
+| S53 | Configuración de empresa | Empresa | Configuración | Administrar los datos de la organización ficticia | Nombre, contacto, paquete y preferencias | Guardar configuración | S53 | Vista maestra |
+| S54 | Roles y permisos | Empresa | Configuración | Revisar y editar permisos de demostración | Administración, medicina laboral y alcance autorizado | Guardar permisos | S54 | Estado derivado |
+| S55 | Preferencias de notificaciones | Empresa | Configuración | Configurar avisos operativos locales | Canales de ejemplo y tipo de evento | Guardar preferencias | S55 | Estado derivado |
+
+## Vistas maestras y estados derivados
+
+| Vista maestra | Nombre | Pantallas o estados derivados |
+| --- | --- | --- |
+| M01 | Acceso y recuperación | S01 Acceso del empleado; S02 Acceso de empresa; S03 Recuperar acceso; S04 Recuperación confirmada |
+| M02 | Inicio del empleado | S05 Inicio del empleado |
+| M03 | Expediente e historial | S06 Mi salud · resumen; S07 Historial clínico; S08 Mi registro de vacunas |
+| M04 | Detalle clínico | S09 Detalle de consulta; S10 Detalle de receta; S11 Resultado de estudio |
+| M05 | Consultas y agenda | S12 Consultas próximas; S13 Consultas anteriores; S14 Agendar consulta · drawer |
+| M06 | Medicamentos y recetas | S15 Mis medicamentos; S16 Mis recetas |
+| M07 | Catálogo de beneficios | S17 Catálogo de beneficios |
+| M08 | Detalle de beneficio | S18 Descuentos en vacunas; S19 Estudio preventivo anual; S20 Descuentos en medicamentos; S21 Descuentos en estudios |
+| M09 | Red y perfil de prestador | S22 Red médica y de estudios; S23 Perfil de prestador |
+| M10 | Solicitud de servicio | S24 Solicitar asesoría médica; S25 Solicitar estudio preventivo; S26 Solicitar ambulancia · simulación; S27 Solicitud registrada |
+| M11 | Catálogo de coberturas | S28 Mis coberturas |
+| M12 | Detalle de cobertura | S29 Cobertura por accidentes; S30 Cobertura de gastos funerarios |
+| M13 | Listado de solicitudes | S31 Mis solicitudes |
+| M14 | Seguimiento de solicitud | S32 Detalle y seguimiento |
+| M15 | Documentos y visor | S33 Centro de documentos; S34 Visor de documento · modal |
+| M16 | NOM-035 y bienestar | S35 Centro NOM-035; S36 Cuestionario de bienestar; S37 Cuestionario completado |
+| M17 | Perfil y consentimiento | S38 Mi perfil; S39 Editar perfil y consentimiento |
+| M18 | Ayuda y asistente | S40 Centro de ayuda; S41 Asistente PRESDODUM · panel |
+| M19 | Inicio de empresa | S42 Inicio de empresa |
+| M20 | Colaboradores y alta | S43 Directorio de colaboradores; S44 Alta de colaborador · drawer |
+| M21 | Perfil y acceso autorizado | S45 Perfil de colaborador; S46 Expediente autorizado |
+| M22 | Medicina laboral y actividad | S47 Medicina laboral; S48 Actividad de medicina laboral |
+| M23 | Gestión de solicitudes | S49 Bandeja de solicitudes; S50 Gestión de solicitud |
+| M24 | Reportes y participación | S51 Reportes de empresa; S52 Seguimiento NOM-035 de empresa |
+| M25 | Configuración de empresa | S53 Configuración de empresa; S54 Roles y permisos; S55 Preferencias de notificaciones |
+
+## Navegación
+
+- Acceso → inicio del empleado o empresa. El selector de portal permite cambiar de experiencia en cualquier momento.
+- Empleado: Inicio → Mi salud → detalle clínico → receta / resultado → visor de documentos.
+- Consultas → próximas / anteriores → agenda lateral → confirmación → cita en el listado.
+- Beneficios → detalle del beneficio → red médica / formulario de solicitud → folio → seguimiento.
+- Coberturas → accidentes / gastos funerarios / ambulancia → solicitud simulada → seguimiento.
+- Solicitudes → detalle → comentarios / adjuntos / cambios de estado compartidos con empresa.
+- NOM-035 → centro → ejercicio ilustrativo → confirmación; la empresa consulta participación agregada.
+- Empresa: Inicio → Colaboradores → perfil → expediente autorizado; sin acceso a recetas ni notas clínicas privadas.
+- Medicina laboral → prevención / actividad → colaborador autorizado.
+- Reportes → filtros → exportación CSV; Documentos y Ayuda se reutilizan con permisos por rol.
+- Configuración → general / permisos / notificaciones.
+- Asistente transversal → respuestas de demostración y enlaces al módulo correspondiente.
+
+## Alcance del prototipo
+
+Los formularios guardan datos ficticios en este navegador. No hay autenticación real, envío de correos, conexión clínica, coordinación de ambulancias ni evaluación normativa oficial. El asistente reproduce soporte contextual mediante respuestas de demostración. Los alcances y descuentos son ilustrativos y deberán validarse frente al contrato en una fase posterior.

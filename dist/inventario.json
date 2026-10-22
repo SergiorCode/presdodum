@@ -1,0 +1,1586 @@
+{
+  "masters": [
+    {
+      "id": "M01",
+      "name": "Acceso y recuperación",
+      "states": [
+        {
+          "id": "S01",
+          "m": "M01",
+          "name": "Acceso del empleado",
+          "role": "Compartido",
+          "module": "Acceso",
+          "goal": "Entrar a la experiencia del empleado",
+          "info": "Perfil ficticio, correo y paquete",
+          "cta": "Entrar como Mariana",
+          "to": "S05",
+          "path": "/acceso",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S02",
+          "m": "M01",
+          "name": "Acceso de empresa",
+          "role": "Empresa",
+          "module": "Acceso",
+          "goal": "Entrar al portal de empresa",
+          "info": "Organización ficticia y rol de administración",
+          "cta": "Entrar a empresa",
+          "to": "S42",
+          "path": "/acceso/empresa",
+          "kind": "Estado derivado"
+        },
+        {
+          "id": "S03",
+          "m": "M01",
+          "name": "Recuperar acceso",
+          "role": "Compartido",
+          "module": "Acceso",
+          "goal": "Solicitar instrucciones de recuperación",
+          "info": "Correo de demostración",
+          "cta": "Enviar instrucciones",
+          "to": "S04",
+          "path": "/acceso/recuperar",
+          "kind": "Estado derivado"
+        },
+        {
+          "id": "S04",
+          "m": "M01",
+          "name": "Recuperación confirmada",
+          "role": "Compartido",
+          "module": "Acceso",
+          "goal": "Confirmar la simulación de recuperación",
+          "info": "Confirmación sin envío de correo real",
+          "cta": "Volver al acceso",
+          "to": "S01",
+          "path": "/acceso/confirmacion",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "Inicio del empleado",
+      "states": [
+        {
+          "id": "S05",
+          "m": "M02",
+          "name": "Inicio del empleado",
+          "role": "Empleado",
+          "module": "Inicio",
+          "goal": "Conocer el estado del paquete y siguientes acciones",
+          "info": "Paquete, cita, prevención, solicitudes y accesos rápidos",
+          "cta": "Ver mi expediente",
+          "to": "S06",
+          "path": "/empleado/inicio",
+          "kind": "Vista maestra"
+        }
+      ]
+    },
+    {
+      "id": "M03",
+      "name": "Expediente e historial",
+      "states": [
+        {
+          "id": "S06",
+          "m": "M03",
+          "name": "Mi salud · resumen",
+          "role": "Empleado",
+          "module": "Mi salud",
+          "goal": "Consultar el expediente clínico personal",
+          "info": "PR-00271, antecedentes, indicadores y documentos",
+          "cta": "Ver historial clínico",
+          "to": "S07",
+          "path": "/empleado/salud",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S07",
+          "m": "M03",
+          "name": "Historial clínico",
+          "role": "Empleado",
+          "module": "Mi salud",
+          "goal": "Recorrer los eventos de salud",
+          "info": "Timeline de consultas, estudios y vacunas ficticios",
+          "cta": "Ver consulta",
+          "to": "S09",
+          "path": "/empleado/salud/historial",
+          "kind": "Estado derivado"
+        },
+        {
+          "id": "S08",
+          "m": "M03",
+          "name": "Mi registro de vacunas",
+          "role": "Empleado",
+          "module": "Mi salud",
+          "goal": "Consultar registros y beneficios de vacunación",
+          "info": "Registros ilustrativos y documentos",
+          "cta": "Ver beneficio de vacunas",
+          "to": "S18",
+          "path": "/empleado/salud/vacunas",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M04",
+      "name": "Detalle clínico",
+      "states": [
+        {
+          "id": "S09",
+          "m": "M04",
+          "name": "Detalle de consulta",
+          "role": "Empleado",
+          "module": "Mi salud",
+          "goal": "Consultar una atención registrada",
+          "info": "Motivo, profesional, notas ficticias y receta",
+          "cta": "Ver receta",
+          "to": "S10",
+          "path": "/empleado/salud/consulta",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S10",
+          "m": "M04",
+          "name": "Detalle de receta",
+          "role": "Empleado",
+          "module": "Mi salud",
+          "goal": "Consultar y descargar una receta ilustrativa",
+          "info": "Folio, emisor, fecha y registro sin pauta médica",
+          "cta": "Ver documento de receta",
+          "to": "S34",
+          "path": "/empleado/salud/receta",
+          "kind": "Estado derivado"
+        },
+        {
+          "id": "S11",
+          "m": "M04",
+          "name": "Resultado de estudio",
+          "role": "Empleado",
+          "module": "Mi salud",
+          "goal": "Consultar el documento de un estudio",
+          "info": "Estudio preventivo, fecha, estatus y archivo ficticio",
+          "cta": "Ver documento",
+          "to": "S34",
+          "path": "/empleado/salud/resultado",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M05",
+      "name": "Consultas y agenda",
+      "states": [
+        {
+          "id": "S12",
+          "m": "M05",
+          "name": "Consultas próximas",
+          "role": "Empleado",
+          "module": "Consultas médicas",
+          "goal": "Administrar las citas programadas",
+          "info": "Fecha, hora, profesional, modalidad y estado",
+          "cta": "Agendar consulta",
+          "to": "S14",
+          "path": "/empleado/consultas",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S13",
+          "m": "M05",
+          "name": "Consultas anteriores",
+          "role": "Empleado",
+          "module": "Consultas médicas",
+          "goal": "Revisar atenciones previas",
+          "info": "Listado de consultas y acceso a detalle",
+          "cta": "Ver detalle clínico",
+          "to": "S09",
+          "path": "/empleado/consultas/anteriores",
+          "kind": "Estado derivado"
+        },
+        {
+          "id": "S14",
+          "m": "M05",
+          "name": "Agendar consulta · drawer",
+          "role": "Empleado",
+          "module": "Consultas médicas",
+          "goal": "Seleccionar una cita de demostración",
+          "info": "Especialidad, fecha, horario y modalidad",
+          "cta": "Confirmar cita de ejemplo",
+          "to": "S12",
+          "path": "/empleado/consultas/agendar",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M06",
+      "name": "Medicamentos y recetas",
+      "states": [
+        {
+          "id": "S15",
+          "m": "M06",
+          "name": "Mis medicamentos",
+          "role": "Empleado",
+          "module": "Mi salud",
+          "goal": "Consultar registros de medicamentos",
+          "info": "Tratamientos ficticios, estado y receta vinculada",
+          "cta": "Ver mis recetas",
+          "to": "S16",
+          "path": "/empleado/medicamentos",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S16",
+          "m": "M06",
+          "name": "Mis recetas",
+          "role": "Empleado",
+          "module": "Mi salud",
+          "goal": "Localizar recetas emitidas",
+          "info": "Folios, fechas y documentos ilustrativos",
+          "cta": "Abrir receta",
+          "to": "S10",
+          "path": "/empleado/medicamentos/recetas",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M07",
+      "name": "Catálogo de beneficios",
+      "states": [
+        {
+          "id": "S17",
+          "m": "M07",
+          "name": "Catálogo de beneficios",
+          "role": "Empleado",
+          "module": "Beneficios",
+          "goal": "Explorar el paquete integral",
+          "info": "Vacunas, prevención, red médica, estudios y farmacia",
+          "cta": "Ver estudio preventivo",
+          "to": "S19",
+          "path": "/empleado/beneficios",
+          "kind": "Vista maestra"
+        }
+      ]
+    },
+    {
+      "id": "M08",
+      "name": "Detalle de beneficio",
+      "states": [
+        {
+          "id": "S18",
+          "m": "M08",
+          "name": "Descuentos en vacunas",
+          "role": "Empleado",
+          "module": "Beneficios",
+          "goal": "Consultar y activar el beneficio ilustrativo",
+          "info": "Servicios, disponibilidad y condiciones de ejemplo",
+          "cta": "Solicitar orientación",
+          "to": "S24",
+          "path": "/empleado/beneficios/vacunas",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S19",
+          "m": "M08",
+          "name": "Estudio preventivo anual",
+          "role": "Empleado",
+          "module": "Beneficios",
+          "goal": "Consultar el estado del estudio anual",
+          "info": "Elegibilidad, pasos, prestadores y resultado",
+          "cta": "Solicitar estudio",
+          "to": "S25",
+          "path": "/empleado/beneficios/preventivo",
+          "kind": "Estado derivado"
+        },
+        {
+          "id": "S20",
+          "m": "M08",
+          "name": "Descuentos en medicamentos",
+          "role": "Empleado",
+          "module": "Beneficios",
+          "goal": "Consultar la red y condiciones de farmacia",
+          "info": "Farmacias ficticias y cupón de demostración",
+          "cta": "Generar cupón de ejemplo",
+          "to": "S34",
+          "path": "/empleado/beneficios/farmacia",
+          "kind": "Estado derivado"
+        },
+        {
+          "id": "S21",
+          "m": "M08",
+          "name": "Descuentos en estudios",
+          "role": "Empleado",
+          "module": "Beneficios",
+          "goal": "Consultar opciones de laboratorio e imagen",
+          "info": "Prestadores, categorías y condiciones ilustrativas",
+          "cta": "Consultar red de estudios",
+          "to": "S22",
+          "path": "/empleado/beneficios/estudios",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M09",
+      "name": "Red y perfil de prestador",
+      "states": [
+        {
+          "id": "S22",
+          "m": "M09",
+          "name": "Red médica y de estudios",
+          "role": "Empleado",
+          "module": "Beneficios",
+          "goal": "Encontrar un prestador ficticio",
+          "info": "Filtros por servicio, zona y modalidad",
+          "cta": "Ver prestador",
+          "to": "S23",
+          "path": "/empleado/red-medica",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S23",
+          "m": "M09",
+          "name": "Perfil de prestador",
+          "role": "Empleado",
+          "module": "Beneficios",
+          "goal": "Consultar disponibilidad y beneficio",
+          "info": "Especialidad, ubicación ficticia, horarios y descuento",
+          "cta": "Agendar consulta",
+          "to": "S14",
+          "path": "/empleado/red-medica/prestador",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M10",
+      "name": "Solicitud de servicio",
+      "states": [
+        {
+          "id": "S24",
+          "m": "M10",
+          "name": "Solicitar asesoría médica",
+          "role": "Empleado",
+          "module": "Solicitudes",
+          "goal": "Crear una solicitud de orientación",
+          "info": "Motivo general, modalidad y preferencia de contacto",
+          "cta": "Enviar solicitud de ejemplo",
+          "to": "S27",
+          "path": "/empleado/solicitar/asesoria",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S25",
+          "m": "M10",
+          "name": "Solicitar estudio preventivo",
+          "role": "Empleado",
+          "module": "Solicitudes",
+          "goal": "Solicitar coordinación del estudio anual",
+          "info": "Prestador, fecha preferida y comentarios",
+          "cta": "Enviar solicitud de ejemplo",
+          "to": "S27",
+          "path": "/empleado/solicitar/preventivo",
+          "kind": "Estado derivado"
+        },
+        {
+          "id": "S26",
+          "m": "M10",
+          "name": "Solicitar ambulancia · simulación",
+          "role": "Empleado",
+          "module": "Coberturas",
+          "goal": "Demostrar el flujo de asistencia de ambulancia",
+          "info": "Ubicación ficticia, contacto y condiciones ilustrativas",
+          "cta": "Simular solicitud",
+          "to": "S27",
+          "path": "/empleado/solicitar/ambulancia",
+          "kind": "Estado derivado"
+        },
+        {
+          "id": "S27",
+          "m": "M10",
+          "name": "Solicitud registrada",
+          "role": "Empleado",
+          "module": "Solicitudes",
+          "goal": "Mostrar folio y próximos pasos",
+          "info": "Folio, estado, fecha y seguimiento",
+          "cta": "Dar seguimiento",
+          "to": "S32",
+          "path": "/empleado/solicitar/confirmacion",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M11",
+      "name": "Catálogo de coberturas",
+      "states": [
+        {
+          "id": "S28",
+          "m": "M11",
+          "name": "Mis coberturas",
+          "role": "Empleado",
+          "module": "Coberturas",
+          "goal": "Comprender las coberturas del paquete",
+          "info": "Accidentes, gastos funerarios y ambulancia",
+          "cta": "Ver cobertura por accidentes",
+          "to": "S29",
+          "path": "/empleado/coberturas",
+          "kind": "Vista maestra"
+        }
+      ]
+    },
+    {
+      "id": "M12",
+      "name": "Detalle de cobertura",
+      "states": [
+        {
+          "id": "S29",
+          "m": "M12",
+          "name": "Cobertura por accidentes",
+          "role": "Empleado",
+          "module": "Coberturas",
+          "goal": "Consultar alcance y proceso ilustrativos",
+          "info": "Beneficiarios, requisitos y documentos de ejemplo",
+          "cta": "Iniciar solicitud de ejemplo",
+          "to": "S24",
+          "path": "/empleado/coberturas/accidentes",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S30",
+          "m": "M12",
+          "name": "Cobertura de gastos funerarios",
+          "role": "Empleado",
+          "module": "Coberturas",
+          "goal": "Consultar asistencia y requisitos ilustrativos",
+          "info": "Beneficiarios, documentos y pasos de apoyo",
+          "cta": "Solicitar orientación",
+          "to": "S24",
+          "path": "/empleado/coberturas/funerarios",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M13",
+      "name": "Listado de solicitudes",
+      "states": [
+        {
+          "id": "S31",
+          "m": "M13",
+          "name": "Mis solicitudes",
+          "role": "Empleado",
+          "module": "Solicitudes",
+          "goal": "Consultar solicitudes y su estado",
+          "info": "Búsqueda, filtros, folios, fechas y estados",
+          "cta": "Ver seguimiento",
+          "to": "S32",
+          "path": "/empleado/solicitudes",
+          "kind": "Vista maestra"
+        }
+      ]
+    },
+    {
+      "id": "M14",
+      "name": "Seguimiento de solicitud",
+      "states": [
+        {
+          "id": "S32",
+          "m": "M14",
+          "name": "Detalle y seguimiento",
+          "role": "Empleado",
+          "module": "Solicitudes",
+          "goal": "Conocer el avance y agregar información",
+          "info": "Timeline, mensajes, adjuntos y próximo paso",
+          "cta": "Agregar comentario",
+          "to": "S32",
+          "path": "/empleado/solicitudes/detalle",
+          "kind": "Vista maestra"
+        }
+      ]
+    },
+    {
+      "id": "M15",
+      "name": "Documentos y visor",
+      "states": [
+        {
+          "id": "S33",
+          "m": "M15",
+          "name": "Centro de documentos",
+          "role": "Compartido",
+          "module": "Documentos",
+          "goal": "Localizar y descargar documentos permitidos",
+          "info": "Categorías, búsqueda, fechas y permisos por rol",
+          "cta": "Abrir documento",
+          "to": "S34",
+          "path": "/documentos",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S34",
+          "m": "M15",
+          "name": "Visor de documento · modal",
+          "role": "Compartido",
+          "module": "Documentos",
+          "goal": "Previsualizar y descargar un archivo ficticio",
+          "info": "Título, emisor, contenido ilustrativo y archivo",
+          "cta": "Descargar archivo de ejemplo",
+          "to": "S34",
+          "path": "/documentos/visor",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M16",
+      "name": "NOM-035 y bienestar",
+      "states": [
+        {
+          "id": "S35",
+          "m": "M16",
+          "name": "Centro NOM-035",
+          "role": "Empleado",
+          "module": "NOM-035",
+          "goal": "Consultar información y actividades de bienestar",
+          "info": "Documentos, confidencialidad y cuestionario ilustrativo",
+          "cta": "Abrir ejercicio de bienestar",
+          "to": "S36",
+          "path": "/empleado/nom035",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S36",
+          "m": "M16",
+          "name": "Cuestionario de bienestar",
+          "role": "Empleado",
+          "module": "NOM-035",
+          "goal": "Demostrar una captura de respuestas",
+          "info": "Preguntas de ejemplo, progreso y guardado local",
+          "cta": "Guardar respuestas de ejemplo",
+          "to": "S37",
+          "path": "/empleado/nom035/cuestionario",
+          "kind": "Estado derivado"
+        },
+        {
+          "id": "S37",
+          "m": "M16",
+          "name": "Cuestionario completado",
+          "role": "Empleado",
+          "module": "NOM-035",
+          "goal": "Confirmar registro del ejercicio ilustrativo",
+          "info": "Fecha, confirmación y acceso a documentos",
+          "cta": "Volver al centro",
+          "to": "S35",
+          "path": "/empleado/nom035/completado",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M17",
+      "name": "Perfil y consentimiento",
+      "states": [
+        {
+          "id": "S38",
+          "m": "M17",
+          "name": "Mi perfil",
+          "role": "Empleado",
+          "module": "Mi perfil",
+          "goal": "Consultar identidad, contacto y privacidad",
+          "info": "Mariana López Hernández, empresa y consentimiento",
+          "cta": "Editar perfil",
+          "to": "S39",
+          "path": "/empleado/perfil",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S39",
+          "m": "M17",
+          "name": "Editar perfil y consentimiento",
+          "role": "Empleado",
+          "module": "Mi perfil",
+          "goal": "Actualizar datos ficticios y acceso laboral",
+          "info": "Contacto, contacto de apoyo y autorización laboral",
+          "cta": "Guardar cambios",
+          "to": "S38",
+          "path": "/empleado/perfil/editar",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M18",
+      "name": "Ayuda y asistente",
+      "states": [
+        {
+          "id": "S40",
+          "m": "M18",
+          "name": "Centro de ayuda",
+          "role": "Compartido",
+          "module": "Ayuda",
+          "goal": "Resolver dudas de uso de la plataforma",
+          "info": "Buscador, preguntas frecuentes y soporte",
+          "cta": "Abrir asistente PRESDODUM",
+          "to": "S41",
+          "path": "/ayuda",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S41",
+          "m": "M18",
+          "name": "Asistente PRESDODUM · panel",
+          "role": "Compartido",
+          "module": "Ayuda",
+          "goal": "Demostrar soporte contextual y navegación",
+          "info": "Conversación simulada, sugerencias y enlaces útiles",
+          "cta": "Consultar beneficios",
+          "to": "S17",
+          "path": "/ayuda/asistente",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M19",
+      "name": "Inicio de empresa",
+      "states": [
+        {
+          "id": "S42",
+          "m": "M19",
+          "name": "Inicio de empresa",
+          "role": "Empresa",
+          "module": "Inicio",
+          "goal": "Conocer actividad y pendientes de la organización",
+          "info": "Colaboradores, solicitudes, prevención y actividad",
+          "cta": "Ver colaboradores",
+          "to": "S43",
+          "path": "/empresa/inicio",
+          "kind": "Vista maestra"
+        }
+      ]
+    },
+    {
+      "id": "M20",
+      "name": "Colaboradores y alta",
+      "states": [
+        {
+          "id": "S43",
+          "m": "M20",
+          "name": "Directorio de colaboradores",
+          "role": "Empresa",
+          "module": "Colaboradores",
+          "goal": "Buscar y consultar colaboradores ficticios",
+          "info": "Nombre, área, paquete, estado y autorización",
+          "cta": "Abrir perfil",
+          "to": "S45",
+          "path": "/empresa/colaboradores",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S44",
+          "m": "M20",
+          "name": "Alta de colaborador · drawer",
+          "role": "Empresa",
+          "module": "Colaboradores",
+          "goal": "Agregar un colaborador de demostración",
+          "info": "Nombre, correo, área y paquete sin datos clínicos",
+          "cta": "Guardar colaborador de ejemplo",
+          "to": "S43",
+          "path": "/empresa/colaboradores/alta",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M21",
+      "name": "Perfil y acceso autorizado",
+      "states": [
+        {
+          "id": "S45",
+          "m": "M21",
+          "name": "Perfil de colaborador",
+          "role": "Empresa",
+          "module": "Colaboradores",
+          "goal": "Consultar información laboral y alcance permitido",
+          "info": "Paquete, actividad y consentimiento registrado",
+          "cta": "Ver expediente autorizado",
+          "to": "S46",
+          "path": "/empresa/colaboradores/perfil",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S46",
+          "m": "M21",
+          "name": "Expediente autorizado",
+          "role": "Empresa / Medicina laboral",
+          "module": "Medicina laboral",
+          "goal": "Mostrar solo información expresamente autorizada",
+          "info": "Constancia laboral y estudio autorizado; sin notas privadas",
+          "cta": "Ver documento autorizado",
+          "to": "S34",
+          "path": "/empresa/colaboradores/expediente",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M22",
+      "name": "Medicina laboral y actividad",
+      "states": [
+        {
+          "id": "S47",
+          "m": "M22",
+          "name": "Medicina laboral",
+          "role": "Empresa / Medicina laboral",
+          "module": "Medicina laboral",
+          "goal": "Dar seguimiento a prevención laboral",
+          "info": "Estudios, autorizaciones y estado por colaborador",
+          "cta": "Ver actividad",
+          "to": "S48",
+          "path": "/empresa/medicina-laboral",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S48",
+          "m": "M22",
+          "name": "Actividad de medicina laboral",
+          "role": "Empresa / Medicina laboral",
+          "module": "Medicina laboral",
+          "goal": "Recorrer eventos laborales permitidos",
+          "info": "Timeline con actor, fecha, acción y alcance",
+          "cta": "Consultar colaborador",
+          "to": "S45",
+          "path": "/empresa/medicina-laboral/actividad",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M23",
+      "name": "Gestión de solicitudes",
+      "states": [
+        {
+          "id": "S49",
+          "m": "M23",
+          "name": "Bandeja de solicitudes",
+          "role": "Empresa",
+          "module": "Solicitudes",
+          "goal": "Gestionar solicitudes operativas de colaboradores",
+          "info": "Folios, tipo, prioridad, responsable y estado",
+          "cta": "Abrir solicitud",
+          "to": "S50",
+          "path": "/empresa/solicitudes",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S50",
+          "m": "M23",
+          "name": "Gestión de solicitud",
+          "role": "Empresa",
+          "module": "Solicitudes",
+          "goal": "Asignar responsable y actualizar avance",
+          "info": "Datos operativos, historial y mensajes compartidos",
+          "cta": "Guardar actualización",
+          "to": "S49",
+          "path": "/empresa/solicitudes/detalle",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M24",
+      "name": "Reportes y participación",
+      "states": [
+        {
+          "id": "S51",
+          "m": "M24",
+          "name": "Reportes de empresa",
+          "role": "Empresa",
+          "module": "Reportes",
+          "goal": "Revisar actividad agregada de la organización",
+          "info": "Uso del paquete, prevención y filtros de periodo",
+          "cta": "Exportar reporte ficticio",
+          "to": "S51",
+          "path": "/empresa/reportes",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S52",
+          "m": "M24",
+          "name": "Seguimiento NOM-035 de empresa",
+          "role": "Empresa",
+          "module": "NOM-035",
+          "goal": "Consultar participación agregada y documentos",
+          "info": "Participación, campañas y ejercicio sin evaluación oficial",
+          "cta": "Consultar documentos NOM-035",
+          "to": "S33",
+          "path": "/empresa/nom035",
+          "kind": "Estado derivado"
+        }
+      ]
+    },
+    {
+      "id": "M25",
+      "name": "Configuración de empresa",
+      "states": [
+        {
+          "id": "S53",
+          "m": "M25",
+          "name": "Configuración de empresa",
+          "role": "Empresa",
+          "module": "Configuración",
+          "goal": "Administrar los datos de la organización ficticia",
+          "info": "Nombre, contacto, paquete y preferencias",
+          "cta": "Guardar configuración",
+          "to": "S53",
+          "path": "/empresa/configuracion",
+          "kind": "Vista maestra"
+        },
+        {
+          "id": "S54",
+          "m": "M25",
+          "name": "Roles y permisos",
+          "role": "Empresa",
+          "module": "Configuración",
+          "goal": "Revisar y editar permisos de demostración",
+          "info": "Administración, medicina laboral y alcance autorizado",
+          "cta": "Guardar permisos",
+          "to": "S54",
+          "path": "/empresa/configuracion/permisos",
+          "kind": "Estado derivado"
+        },
+        {
+          "id": "S55",
+          "m": "M25",
+          "name": "Preferencias de notificaciones",
+          "role": "Empresa",
+          "module": "Configuración",
+          "goal": "Configurar avisos operativos locales",
+          "info": "Canales de ejemplo y tipo de evento",
+          "cta": "Guardar preferencias",
+          "to": "S55",
+          "path": "/empresa/configuracion/notificaciones",
+          "kind": "Estado derivado"
+        }
+      ]
+    }
+  ],
+  "screens": [
+    {
+      "id": "S01",
+      "m": "M01",
+      "name": "Acceso del empleado",
+      "role": "Compartido",
+      "module": "Acceso",
+      "goal": "Entrar a la experiencia del empleado",
+      "info": "Perfil ficticio, correo y paquete",
+      "cta": "Entrar como Mariana",
+      "to": "S05",
+      "path": "/acceso",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S02",
+      "m": "M01",
+      "name": "Acceso de empresa",
+      "role": "Empresa",
+      "module": "Acceso",
+      "goal": "Entrar al portal de empresa",
+      "info": "Organización ficticia y rol de administración",
+      "cta": "Entrar a empresa",
+      "to": "S42",
+      "path": "/acceso/empresa",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S03",
+      "m": "M01",
+      "name": "Recuperar acceso",
+      "role": "Compartido",
+      "module": "Acceso",
+      "goal": "Solicitar instrucciones de recuperación",
+      "info": "Correo de demostración",
+      "cta": "Enviar instrucciones",
+      "to": "S04",
+      "path": "/acceso/recuperar",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S04",
+      "m": "M01",
+      "name": "Recuperación confirmada",
+      "role": "Compartido",
+      "module": "Acceso",
+      "goal": "Confirmar la simulación de recuperación",
+      "info": "Confirmación sin envío de correo real",
+      "cta": "Volver al acceso",
+      "to": "S01",
+      "path": "/acceso/confirmacion",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S05",
+      "m": "M02",
+      "name": "Inicio del empleado",
+      "role": "Empleado",
+      "module": "Inicio",
+      "goal": "Conocer el estado del paquete y siguientes acciones",
+      "info": "Paquete, cita, prevención, solicitudes y accesos rápidos",
+      "cta": "Ver mi expediente",
+      "to": "S06",
+      "path": "/empleado/inicio",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S06",
+      "m": "M03",
+      "name": "Mi salud · resumen",
+      "role": "Empleado",
+      "module": "Mi salud",
+      "goal": "Consultar el expediente clínico personal",
+      "info": "PR-00271, antecedentes, indicadores y documentos",
+      "cta": "Ver historial clínico",
+      "to": "S07",
+      "path": "/empleado/salud",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S07",
+      "m": "M03",
+      "name": "Historial clínico",
+      "role": "Empleado",
+      "module": "Mi salud",
+      "goal": "Recorrer los eventos de salud",
+      "info": "Timeline de consultas, estudios y vacunas ficticios",
+      "cta": "Ver consulta",
+      "to": "S09",
+      "path": "/empleado/salud/historial",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S08",
+      "m": "M03",
+      "name": "Mi registro de vacunas",
+      "role": "Empleado",
+      "module": "Mi salud",
+      "goal": "Consultar registros y beneficios de vacunación",
+      "info": "Registros ilustrativos y documentos",
+      "cta": "Ver beneficio de vacunas",
+      "to": "S18",
+      "path": "/empleado/salud/vacunas",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S09",
+      "m": "M04",
+      "name": "Detalle de consulta",
+      "role": "Empleado",
+      "module": "Mi salud",
+      "goal": "Consultar una atención registrada",
+      "info": "Motivo, profesional, notas ficticias y receta",
+      "cta": "Ver receta",
+      "to": "S10",
+      "path": "/empleado/salud/consulta",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S10",
+      "m": "M04",
+      "name": "Detalle de receta",
+      "role": "Empleado",
+      "module": "Mi salud",
+      "goal": "Consultar y descargar una receta ilustrativa",
+      "info": "Folio, emisor, fecha y registro sin pauta médica",
+      "cta": "Ver documento de receta",
+      "to": "S34",
+      "path": "/empleado/salud/receta",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S11",
+      "m": "M04",
+      "name": "Resultado de estudio",
+      "role": "Empleado",
+      "module": "Mi salud",
+      "goal": "Consultar el documento de un estudio",
+      "info": "Estudio preventivo, fecha, estatus y archivo ficticio",
+      "cta": "Ver documento",
+      "to": "S34",
+      "path": "/empleado/salud/resultado",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S12",
+      "m": "M05",
+      "name": "Consultas próximas",
+      "role": "Empleado",
+      "module": "Consultas médicas",
+      "goal": "Administrar las citas programadas",
+      "info": "Fecha, hora, profesional, modalidad y estado",
+      "cta": "Agendar consulta",
+      "to": "S14",
+      "path": "/empleado/consultas",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S13",
+      "m": "M05",
+      "name": "Consultas anteriores",
+      "role": "Empleado",
+      "module": "Consultas médicas",
+      "goal": "Revisar atenciones previas",
+      "info": "Listado de consultas y acceso a detalle",
+      "cta": "Ver detalle clínico",
+      "to": "S09",
+      "path": "/empleado/consultas/anteriores",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S14",
+      "m": "M05",
+      "name": "Agendar consulta · drawer",
+      "role": "Empleado",
+      "module": "Consultas médicas",
+      "goal": "Seleccionar una cita de demostración",
+      "info": "Especialidad, fecha, horario y modalidad",
+      "cta": "Confirmar cita de ejemplo",
+      "to": "S12",
+      "path": "/empleado/consultas/agendar",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S15",
+      "m": "M06",
+      "name": "Mis medicamentos",
+      "role": "Empleado",
+      "module": "Mi salud",
+      "goal": "Consultar registros de medicamentos",
+      "info": "Tratamientos ficticios, estado y receta vinculada",
+      "cta": "Ver mis recetas",
+      "to": "S16",
+      "path": "/empleado/medicamentos",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S16",
+      "m": "M06",
+      "name": "Mis recetas",
+      "role": "Empleado",
+      "module": "Mi salud",
+      "goal": "Localizar recetas emitidas",
+      "info": "Folios, fechas y documentos ilustrativos",
+      "cta": "Abrir receta",
+      "to": "S10",
+      "path": "/empleado/medicamentos/recetas",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S17",
+      "m": "M07",
+      "name": "Catálogo de beneficios",
+      "role": "Empleado",
+      "module": "Beneficios",
+      "goal": "Explorar el paquete integral",
+      "info": "Vacunas, prevención, red médica, estudios y farmacia",
+      "cta": "Ver estudio preventivo",
+      "to": "S19",
+      "path": "/empleado/beneficios",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S18",
+      "m": "M08",
+      "name": "Descuentos en vacunas",
+      "role": "Empleado",
+      "module": "Beneficios",
+      "goal": "Consultar y activar el beneficio ilustrativo",
+      "info": "Servicios, disponibilidad y condiciones de ejemplo",
+      "cta": "Solicitar orientación",
+      "to": "S24",
+      "path": "/empleado/beneficios/vacunas",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S19",
+      "m": "M08",
+      "name": "Estudio preventivo anual",
+      "role": "Empleado",
+      "module": "Beneficios",
+      "goal": "Consultar el estado del estudio anual",
+      "info": "Elegibilidad, pasos, prestadores y resultado",
+      "cta": "Solicitar estudio",
+      "to": "S25",
+      "path": "/empleado/beneficios/preventivo",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S20",
+      "m": "M08",
+      "name": "Descuentos en medicamentos",
+      "role": "Empleado",
+      "module": "Beneficios",
+      "goal": "Consultar la red y condiciones de farmacia",
+      "info": "Farmacias ficticias y cupón de demostración",
+      "cta": "Generar cupón de ejemplo",
+      "to": "S34",
+      "path": "/empleado/beneficios/farmacia",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S21",
+      "m": "M08",
+      "name": "Descuentos en estudios",
+      "role": "Empleado",
+      "module": "Beneficios",
+      "goal": "Consultar opciones de laboratorio e imagen",
+      "info": "Prestadores, categorías y condiciones ilustrativas",
+      "cta": "Consultar red de estudios",
+      "to": "S22",
+      "path": "/empleado/beneficios/estudios",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S22",
+      "m": "M09",
+      "name": "Red médica y de estudios",
+      "role": "Empleado",
+      "module": "Beneficios",
+      "goal": "Encontrar un prestador ficticio",
+      "info": "Filtros por servicio, zona y modalidad",
+      "cta": "Ver prestador",
+      "to": "S23",
+      "path": "/empleado/red-medica",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S23",
+      "m": "M09",
+      "name": "Perfil de prestador",
+      "role": "Empleado",
+      "module": "Beneficios",
+      "goal": "Consultar disponibilidad y beneficio",
+      "info": "Especialidad, ubicación ficticia, horarios y descuento",
+      "cta": "Agendar consulta",
+      "to": "S14",
+      "path": "/empleado/red-medica/prestador",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S24",
+      "m": "M10",
+      "name": "Solicitar asesoría médica",
+      "role": "Empleado",
+      "module": "Solicitudes",
+      "goal": "Crear una solicitud de orientación",
+      "info": "Motivo general, modalidad y preferencia de contacto",
+      "cta": "Enviar solicitud de ejemplo",
+      "to": "S27",
+      "path": "/empleado/solicitar/asesoria",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S25",
+      "m": "M10",
+      "name": "Solicitar estudio preventivo",
+      "role": "Empleado",
+      "module": "Solicitudes",
+      "goal": "Solicitar coordinación del estudio anual",
+      "info": "Prestador, fecha preferida y comentarios",
+      "cta": "Enviar solicitud de ejemplo",
+      "to": "S27",
+      "path": "/empleado/solicitar/preventivo",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S26",
+      "m": "M10",
+      "name": "Solicitar ambulancia · simulación",
+      "role": "Empleado",
+      "module": "Coberturas",
+      "goal": "Demostrar el flujo de asistencia de ambulancia",
+      "info": "Ubicación ficticia, contacto y condiciones ilustrativas",
+      "cta": "Simular solicitud",
+      "to": "S27",
+      "path": "/empleado/solicitar/ambulancia",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S27",
+      "m": "M10",
+      "name": "Solicitud registrada",
+      "role": "Empleado",
+      "module": "Solicitudes",
+      "goal": "Mostrar folio y próximos pasos",
+      "info": "Folio, estado, fecha y seguimiento",
+      "cta": "Dar seguimiento",
+      "to": "S32",
+      "path": "/empleado/solicitar/confirmacion",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S28",
+      "m": "M11",
+      "name": "Mis coberturas",
+      "role": "Empleado",
+      "module": "Coberturas",
+      "goal": "Comprender las coberturas del paquete",
+      "info": "Accidentes, gastos funerarios y ambulancia",
+      "cta": "Ver cobertura por accidentes",
+      "to": "S29",
+      "path": "/empleado/coberturas",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S29",
+      "m": "M12",
+      "name": "Cobertura por accidentes",
+      "role": "Empleado",
+      "module": "Coberturas",
+      "goal": "Consultar alcance y proceso ilustrativos",
+      "info": "Beneficiarios, requisitos y documentos de ejemplo",
+      "cta": "Iniciar solicitud de ejemplo",
+      "to": "S24",
+      "path": "/empleado/coberturas/accidentes",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S30",
+      "m": "M12",
+      "name": "Cobertura de gastos funerarios",
+      "role": "Empleado",
+      "module": "Coberturas",
+      "goal": "Consultar asistencia y requisitos ilustrativos",
+      "info": "Beneficiarios, documentos y pasos de apoyo",
+      "cta": "Solicitar orientación",
+      "to": "S24",
+      "path": "/empleado/coberturas/funerarios",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S31",
+      "m": "M13",
+      "name": "Mis solicitudes",
+      "role": "Empleado",
+      "module": "Solicitudes",
+      "goal": "Consultar solicitudes y su estado",
+      "info": "Búsqueda, filtros, folios, fechas y estados",
+      "cta": "Ver seguimiento",
+      "to": "S32",
+      "path": "/empleado/solicitudes",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S32",
+      "m": "M14",
+      "name": "Detalle y seguimiento",
+      "role": "Empleado",
+      "module": "Solicitudes",
+      "goal": "Conocer el avance y agregar información",
+      "info": "Timeline, mensajes, adjuntos y próximo paso",
+      "cta": "Agregar comentario",
+      "to": "S32",
+      "path": "/empleado/solicitudes/detalle",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S33",
+      "m": "M15",
+      "name": "Centro de documentos",
+      "role": "Compartido",
+      "module": "Documentos",
+      "goal": "Localizar y descargar documentos permitidos",
+      "info": "Categorías, búsqueda, fechas y permisos por rol",
+      "cta": "Abrir documento",
+      "to": "S34",
+      "path": "/documentos",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S34",
+      "m": "M15",
+      "name": "Visor de documento · modal",
+      "role": "Compartido",
+      "module": "Documentos",
+      "goal": "Previsualizar y descargar un archivo ficticio",
+      "info": "Título, emisor, contenido ilustrativo y archivo",
+      "cta": "Descargar archivo de ejemplo",
+      "to": "S34",
+      "path": "/documentos/visor",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S35",
+      "m": "M16",
+      "name": "Centro NOM-035",
+      "role": "Empleado",
+      "module": "NOM-035",
+      "goal": "Consultar información y actividades de bienestar",
+      "info": "Documentos, confidencialidad y cuestionario ilustrativo",
+      "cta": "Abrir ejercicio de bienestar",
+      "to": "S36",
+      "path": "/empleado/nom035",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S36",
+      "m": "M16",
+      "name": "Cuestionario de bienestar",
+      "role": "Empleado",
+      "module": "NOM-035",
+      "goal": "Demostrar una captura de respuestas",
+      "info": "Preguntas de ejemplo, progreso y guardado local",
+      "cta": "Guardar respuestas de ejemplo",
+      "to": "S37",
+      "path": "/empleado/nom035/cuestionario",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S37",
+      "m": "M16",
+      "name": "Cuestionario completado",
+      "role": "Empleado",
+      "module": "NOM-035",
+      "goal": "Confirmar registro del ejercicio ilustrativo",
+      "info": "Fecha, confirmación y acceso a documentos",
+      "cta": "Volver al centro",
+      "to": "S35",
+      "path": "/empleado/nom035/completado",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S38",
+      "m": "M17",
+      "name": "Mi perfil",
+      "role": "Empleado",
+      "module": "Mi perfil",
+      "goal": "Consultar identidad, contacto y privacidad",
+      "info": "Mariana López Hernández, empresa y consentimiento",
+      "cta": "Editar perfil",
+      "to": "S39",
+      "path": "/empleado/perfil",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S39",
+      "m": "M17",
+      "name": "Editar perfil y consentimiento",
+      "role": "Empleado",
+      "module": "Mi perfil",
+      "goal": "Actualizar datos ficticios y acceso laboral",
+      "info": "Contacto, contacto de apoyo y autorización laboral",
+      "cta": "Guardar cambios",
+      "to": "S38",
+      "path": "/empleado/perfil/editar",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S40",
+      "m": "M18",
+      "name": "Centro de ayuda",
+      "role": "Compartido",
+      "module": "Ayuda",
+      "goal": "Resolver dudas de uso de la plataforma",
+      "info": "Buscador, preguntas frecuentes y soporte",
+      "cta": "Abrir asistente PRESDODUM",
+      "to": "S41",
+      "path": "/ayuda",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S41",
+      "m": "M18",
+      "name": "Asistente PRESDODUM · panel",
+      "role": "Compartido",
+      "module": "Ayuda",
+      "goal": "Demostrar soporte contextual y navegación",
+      "info": "Conversación simulada, sugerencias y enlaces útiles",
+      "cta": "Consultar beneficios",
+      "to": "S17",
+      "path": "/ayuda/asistente",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S42",
+      "m": "M19",
+      "name": "Inicio de empresa",
+      "role": "Empresa",
+      "module": "Inicio",
+      "goal": "Conocer actividad y pendientes de la organización",
+      "info": "Colaboradores, solicitudes, prevención y actividad",
+      "cta": "Ver colaboradores",
+      "to": "S43",
+      "path": "/empresa/inicio",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S43",
+      "m": "M20",
+      "name": "Directorio de colaboradores",
+      "role": "Empresa",
+      "module": "Colaboradores",
+      "goal": "Buscar y consultar colaboradores ficticios",
+      "info": "Nombre, área, paquete, estado y autorización",
+      "cta": "Abrir perfil",
+      "to": "S45",
+      "path": "/empresa/colaboradores",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S44",
+      "m": "M20",
+      "name": "Alta de colaborador · drawer",
+      "role": "Empresa",
+      "module": "Colaboradores",
+      "goal": "Agregar un colaborador de demostración",
+      "info": "Nombre, correo, área y paquete sin datos clínicos",
+      "cta": "Guardar colaborador de ejemplo",
+      "to": "S43",
+      "path": "/empresa/colaboradores/alta",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S45",
+      "m": "M21",
+      "name": "Perfil de colaborador",
+      "role": "Empresa",
+      "module": "Colaboradores",
+      "goal": "Consultar información laboral y alcance permitido",
+      "info": "Paquete, actividad y consentimiento registrado",
+      "cta": "Ver expediente autorizado",
+      "to": "S46",
+      "path": "/empresa/colaboradores/perfil",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S46",
+      "m": "M21",
+      "name": "Expediente autorizado",
+      "role": "Empresa / Medicina laboral",
+      "module": "Medicina laboral",
+      "goal": "Mostrar solo información expresamente autorizada",
+      "info": "Constancia laboral y estudio autorizado; sin notas privadas",
+      "cta": "Ver documento autorizado",
+      "to": "S34",
+      "path": "/empresa/colaboradores/expediente",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S47",
+      "m": "M22",
+      "name": "Medicina laboral",
+      "role": "Empresa / Medicina laboral",
+      "module": "Medicina laboral",
+      "goal": "Dar seguimiento a prevención laboral",
+      "info": "Estudios, autorizaciones y estado por colaborador",
+      "cta": "Ver actividad",
+      "to": "S48",
+      "path": "/empresa/medicina-laboral",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S48",
+      "m": "M22",
+      "name": "Actividad de medicina laboral",
+      "role": "Empresa / Medicina laboral",
+      "module": "Medicina laboral",
+      "goal": "Recorrer eventos laborales permitidos",
+      "info": "Timeline con actor, fecha, acción y alcance",
+      "cta": "Consultar colaborador",
+      "to": "S45",
+      "path": "/empresa/medicina-laboral/actividad",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S49",
+      "m": "M23",
+      "name": "Bandeja de solicitudes",
+      "role": "Empresa",
+      "module": "Solicitudes",
+      "goal": "Gestionar solicitudes operativas de colaboradores",
+      "info": "Folios, tipo, prioridad, responsable y estado",
+      "cta": "Abrir solicitud",
+      "to": "S50",
+      "path": "/empresa/solicitudes",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S50",
+      "m": "M23",
+      "name": "Gestión de solicitud",
+      "role": "Empresa",
+      "module": "Solicitudes",
+      "goal": "Asignar responsable y actualizar avance",
+      "info": "Datos operativos, historial y mensajes compartidos",
+      "cta": "Guardar actualización",
+      "to": "S49",
+      "path": "/empresa/solicitudes/detalle",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S51",
+      "m": "M24",
+      "name": "Reportes de empresa",
+      "role": "Empresa",
+      "module": "Reportes",
+      "goal": "Revisar actividad agregada de la organización",
+      "info": "Uso del paquete, prevención y filtros de periodo",
+      "cta": "Exportar reporte ficticio",
+      "to": "S51",
+      "path": "/empresa/reportes",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S52",
+      "m": "M24",
+      "name": "Seguimiento NOM-035 de empresa",
+      "role": "Empresa",
+      "module": "NOM-035",
+      "goal": "Consultar participación agregada y documentos",
+      "info": "Participación, campañas y ejercicio sin evaluación oficial",
+      "cta": "Consultar documentos NOM-035",
+      "to": "S33",
+      "path": "/empresa/nom035",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S53",
+      "m": "M25",
+      "name": "Configuración de empresa",
+      "role": "Empresa",
+      "module": "Configuración",
+      "goal": "Administrar los datos de la organización ficticia",
+      "info": "Nombre, contacto, paquete y preferencias",
+      "cta": "Guardar configuración",
+      "to": "S53",
+      "path": "/empresa/configuracion",
+      "kind": "Vista maestra"
+    },
+    {
+      "id": "S54",
+      "m": "M25",
+      "name": "Roles y permisos",
+      "role": "Empresa",
+      "module": "Configuración",
+      "goal": "Revisar y editar permisos de demostración",
+      "info": "Administración, medicina laboral y alcance autorizado",
+      "cta": "Guardar permisos",
+      "to": "S54",
+      "path": "/empresa/configuracion/permisos",
+      "kind": "Estado derivado"
+    },
+    {
+      "id": "S55",
+      "m": "M25",
+      "name": "Preferencias de notificaciones",
+      "role": "Empresa",
+      "module": "Configuración",
+      "goal": "Configurar avisos operativos locales",
+      "info": "Canales de ejemplo y tipo de evento",
+      "cta": "Guardar preferencias",
+      "to": "S55",
+      "path": "/empresa/configuracion/notificaciones",
+      "kind": "Estado derivado"
+    }
+  ]
+}
