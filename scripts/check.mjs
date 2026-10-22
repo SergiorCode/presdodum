@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
-import {screens,masters,docs} from '../dist/data.js';
-import {permittedDocuments,permittedRequest} from '../dist/model.js';
+import {screens,masters,docs} from '../webapp-demo/data.js';
+import {permittedDocuments,permittedRequest} from '../webapp-demo/model.js';
 assert.equal(screens.length,55);
 assert.equal(masters.length,25);
 assert.equal(new Set(screens.map(s=>s.id)).size,55);
@@ -19,7 +19,7 @@ assert.equal(permittedDocuments(docs,'employee',{consent:false},{}).length,docs.
 const requests=[{id:'A',person:'PR-00271'},{id:'B',person:'PR-00999'}];
 assert.equal(permittedRequest(requests,'B','employee').id,'A');
 assert.equal(permittedRequest(requests,'B','company').id,'B');
-for(const name of [...docs.map(d=>d.id),'cupon']){const pdf=fs.readFileSync('dist/archivos/'+name+'.pdf');assert.ok(pdf.subarray(0,5).toString()==='%PDF-');assert.ok(pdf.length>1000)}
-for(const name of ['app','data','ui','model'])execFileSync(process.execPath,['--check','dist/'+name+'.js']);
-assert.ok(!/Servicios Legales|S\.A\. de C\.V\./i.test(fs.readFileSync('dist/index.html','utf8')));
+for(const name of [...docs.map(d=>d.id),'cupon']){const pdf=fs.readFileSync('webapp-demo/archivos/'+name+'.pdf');assert.ok(pdf.subarray(0,5).toString()==='%PDF-');assert.ok(pdf.length>1000)}
+for(const name of ['app','data','ui','model'])execFileSync(process.execPath,['--check','webapp-demo/'+name+'.js']);
+assert.ok(!/Servicios Legales|S\.A\. de C\.V\./i.test(fs.readFileSync('webapp-demo/index.html','utf8')));
 console.log('PASS: 55 estados, 25 maestras, destinos válidos, permisos y aislamiento por rol, 7 PDF y sintaxis.');

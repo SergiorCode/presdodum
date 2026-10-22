@@ -2,6 +2,17 @@
 
 Prototipo navegable, completamente en español, de un paquete integral de salud para empleados y su portal de empresa.
 
+## Directorios y rutas
+
+| Directorio | URL prevista | Contenido |
+| --- | --- | --- |
+| `home/` | <http://presdodum.com/home> | Reservado para el sitio web; sin páginas ni recursos. |
+| `webapp-demo/` | <http://presdodum.com/webapp-demo> | Web App navegable de demostración. |
+
+`home/.gitkeep` es un archivo vacío que permite conservar la carpeta en Git. Los documentos de trabajo y scripts permanecen en `docs/` y `scripts/`.
+
+El despliegue de GitHub Pages prepara `_site/` con las dos carpetas públicas y excluye `.gitkeep`. La raíz de publicación conserva los nombres `home` y `webapp-demo`; los enlaces internos de la aplicación son relativos y sus pantallas usan rutas con hash. El dominio se configura en el servicio de alojamiento.
+
 ## Ejecutar en tu equipo
 
 Clona el repositorio e inicia un servidor estático desde la carpeta del proyecto:
@@ -9,10 +20,10 @@ Clona el repositorio e inicia un servidor estático desde la carpeta del proyect
 ```bash
 git clone https://github.com/SergiorCode/presdodum.git
 cd presdodum
-python3 -m http.server 8080 --directory dist
+python3 -m http.server 8080
 ```
 
-Abre <http://localhost:8080>. No hace falta instalar paquetes ni compilar la aplicación. Sirve la carpeta `dist` por HTTP; sus módulos JavaScript requieren un servidor para funcionar correctamente.
+Abre <http://localhost:8080/webapp-demo/>. No hace falta instalar paquetes ni compilar la aplicación. Sirve la raíz del repositorio por HTTP para conservar la ruta `/webapp-demo/`; sus módulos JavaScript requieren un servidor para funcionar correctamente.
 
 El acceso es de demostración y no necesita contraseña. Desde el selector superior puedes recorrer los portales de empleado y empresa. El mapa del producto permite abrir los 55 estados.
 
@@ -26,9 +37,9 @@ El acceso es de demostración y no necesita contraseña. Desde el selector super
 
 ## Arquitectura
 
-Sitio estático sin dependencias externas ni proceso de compilación. `dist/data.js` es la fuente del inventario. `dist/model.js` concentra los selectores de acceso de demostración. `dist/ui.js` contiene los componentes base; `dist/app.js` reutiliza 25 renderizadores y gestiona los estados del producto. Las rutas usan hash para admitir enlaces directos en un servidor estático.
+Sitio estático sin dependencias externas ni proceso de compilación. `webapp-demo/data.js` es la fuente del inventario. `webapp-demo/model.js` concentra los selectores de acceso de demostración. `webapp-demo/ui.js` contiene los componentes base; `webapp-demo/app.js` reutiliza 25 renderizadores y gestiona los estados del producto. Las rutas usan hash para admitir enlaces directos en un servidor estático.
 
-`docs/PRESDODUM_Inventario.md`, `dist/inventario.csv`, `dist/inventario.json` y el mapa dentro de la app derivan de la misma definición. Ejecuta `node scripts/inventory.mjs` si cambia el inventario.
+`docs/PRESDODUM_Inventario.md`, `webapp-demo/inventario.csv`, `webapp-demo/inventario.json` y el mapa dentro de la app derivan de la misma definición. Ejecuta `node scripts/inventory.mjs` si cambia el inventario.
 
 ## Verificación
 
