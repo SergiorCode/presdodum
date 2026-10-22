@@ -22,8 +22,12 @@ jobs:
       - name: Preparar directorios públicos
         run: |
           mkdir -p _site
+          cp -R webapp-demo/. _site/
           cp -R home webapp-demo _site/
           find _site -name .gitkeep -delete
+          test -s _site/index.html
+          test -s _site/app.js
+          test -s _site/styles.css
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

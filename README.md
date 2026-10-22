@@ -6,12 +6,13 @@ Prototipo navegable, completamente en español, de un paquete integral de salud 
 
 | Directorio | URL prevista | Contenido |
 | --- | --- | --- |
-| `home/` | <http://presdodum.com/home> | Reservado para el sitio web; sin páginas ni recursos. |
-| `webapp-demo/` | <http://presdodum.com/webapp-demo> | Web App navegable de demostración. |
+| `webapp-demo/` (publicado en la raíz) | <https://presdodum.com/> | Web App navegable de demostración. |
+| `home/` | <https://presdodum.com/home/> | Reservado para el sitio web; sin páginas ni recursos. |
+| `webapp-demo/` (ruta conservada) | <https://presdodum.com/webapp-demo/> | La misma demostración para conservar enlaces existentes. |
 
 `home/.gitkeep` es un archivo vacío que permite conservar la carpeta en Git. Los documentos de trabajo y scripts permanecen en `docs/` y `scripts/`.
 
-El despliegue de GitHub Pages prepara `_site/` con las dos carpetas públicas y excluye `.gitkeep`. La raíz de publicación conserva los nombres `home` y `webapp-demo`; los enlaces internos de la aplicación son relativos y sus pantallas usan rutas con hash. El dominio se configura en el servicio de alojamiento.
+El despliegue de GitHub Pages copia el contenido de `webapp-demo/` a la raíz de `_site/` para que la aplicación abra directamente en el dominio. También conserva las carpetas públicas `home` y `webapp-demo` y excluye `.gitkeep`. Antes de publicar, comprueba que existan `index.html`, `app.js` y `styles.css` en la raíz. Los enlaces internos de la aplicación son relativos y sus pantallas usan rutas con hash. El dominio y la opción Enforce HTTPS se configuran en GitHub Pages.
 
 ## Ejecutar en tu equipo
 
