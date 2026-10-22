@@ -19,8 +19,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      - name: Preparar directorios públicos
+        run: |
+          mkdir -p _site
+          cp -R home webapp-demo _site/
+          find _site -name .gitkeep -delete
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4

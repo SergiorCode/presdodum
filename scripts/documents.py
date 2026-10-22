@@ -6,7 +6,7 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from pypdf import PdfReader
 
-out=Path('dist/archivos');out.mkdir(exist_ok=True)
+out=Path('webapp-demo/archivos');out.mkdir(exist_ok=True)
 font='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 font_b='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 if Path(font).exists():
